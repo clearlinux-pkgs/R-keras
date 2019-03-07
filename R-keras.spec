@@ -4,7 +4,7 @@
 #
 Name     : R-keras
 Version  : 2.2.4
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Summary  : R Interface to 'Keras'
