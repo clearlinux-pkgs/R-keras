@@ -1,6 +1,9 @@
 2.2.4
+R-base64enc
 R-generics
+R-jsonlite
 R-reticulate
 R-tensorflow
 R-tfruns
+R-whisker
 R-zeallot

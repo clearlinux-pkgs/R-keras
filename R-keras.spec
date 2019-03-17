@@ -4,19 +4,22 @@
 #
 Name     : R-keras
 Version  : 2.2.4
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Summary  : R Interface to 'Keras'
 Group    : Development/Tools
 License  : MIT
-Requires: R-generics
-Requires: R-tensorflow
-Requires: R-tfruns
-Requires: R-zeallot
+Requires: R-base64enc
+Requires: R-jsonlite
+Requires: R-whisker
+BuildRequires : R-base64enc
 BuildRequires : R-generics
+BuildRequires : R-jsonlite
+BuildRequires : R-reticulate
 BuildRequires : R-tensorflow
 BuildRequires : R-tfruns
+BuildRequires : R-whisker
 BuildRequires : R-zeallot
 BuildRequires : buildreq-R
 
@@ -33,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543004159
+export SOURCE_DATE_EPOCH=1552864128
 
 %install
-export SOURCE_DATE_EPOCH=1543004159
+export SOURCE_DATE_EPOCH=1552864128
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library keras|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  keras || :
 
 
 %files
@@ -172,3 +174,34 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/keras/python/kerastools/model.py
 /usr/lib64/R/library/keras/python/kerastools/progbar.py
 /usr/lib64/R/library/keras/python/kerastools/wrapper.py
+/usr/lib64/R/library/keras/tests/testthat.R
+/usr/lib64/R/library/keras/tests/testthat/digit.jpeg
+/usr/lib64/R/library/keras/tests/testthat/digit2.jpeg
+/usr/lib64/R/library/keras/tests/testthat/digit_resized.jpeg
+/usr/lib64/R/library/keras/tests/testthat/test-activations.R
+/usr/lib64/R/library/keras/tests/testthat/test-applications.R
+/usr/lib64/R/library/keras/tests/testthat/test-backend.R
+/usr/lib64/R/library/keras/tests/testthat/test-callbacks.R
+/usr/lib64/R/library/keras/tests/testthat/test-constraints.R
+/usr/lib64/R/library/keras/tests/testthat/test-custom-layers.R
+/usr/lib64/R/library/keras/tests/testthat/test-custom-models.R
+/usr/lib64/R/library/keras/tests/testthat/test-datasets.R
+/usr/lib64/R/library/keras/tests/testthat/test-examples.R
+/usr/lib64/R/library/keras/tests/testthat/test-freeze.R
+/usr/lib64/R/library/keras/tests/testthat/test-generators.R
+/usr/lib64/R/library/keras/tests/testthat/test-initializers.R
+/usr/lib64/R/library/keras/tests/testthat/test-layer-methods.R
+/usr/lib64/R/library/keras/tests/testthat/test-layers.R
+/usr/lib64/R/library/keras/tests/testthat/test-losses.R
+/usr/lib64/R/library/keras/tests/testthat/test-metrics.R
+/usr/lib64/R/library/keras/tests/testthat/test-model-persistence.R
+/usr/lib64/R/library/keras/tests/testthat/test-model.R
+/usr/lib64/R/library/keras/tests/testthat/test-optimizers.R
+/usr/lib64/R/library/keras/tests/testthat/test-preprocessing.R
+/usr/lib64/R/library/keras/tests/testthat/test-regularizers.R
+/usr/lib64/R/library/keras/tests/testthat/test-timeseries.R
+/usr/lib64/R/library/keras/tests/testthat/test-utils.R
+/usr/lib64/R/library/keras/tests/testthat/test.h5
+/usr/lib64/R/library/keras/tests/testthat/test_custom_wrappers.R
+/usr/lib64/R/library/keras/tests/testthat/train.R
+/usr/lib64/R/library/keras/tests/testthat/utils.R
