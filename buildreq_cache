@@ -2,6 +2,7 @@
 R-base64enc
 R-generics
 R-jsonlite
+R-mime
 R-reticulate
 R-tensorflow
 R-tfruns

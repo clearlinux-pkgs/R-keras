@@ -4,18 +4,17 @@
 #
 Name     : R-keras
 Version  : 2.2.4
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.2.4.tar.gz
 Summary  : R Interface to 'Keras'
 Group    : Development/Tools
 License  : MIT
-Requires: R-base64enc
-Requires: R-jsonlite
-Requires: R-whisker
+Requires: R-mime
 BuildRequires : R-base64enc
 BuildRequires : R-generics
 BuildRequires : R-jsonlite
+BuildRequires : R-mime
 BuildRequires : R-reticulate
 BuildRequires : R-tensorflow
 BuildRequires : R-tfruns
@@ -36,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552864128
+export SOURCE_DATE_EPOCH=1552890977
 
 %install
-export SOURCE_DATE_EPOCH=1552864128
+export SOURCE_DATE_EPOCH=1552890977
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
