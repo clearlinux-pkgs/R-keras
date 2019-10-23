@@ -4,7 +4,7 @@
 #
 Name     : R-keras
 Version  : 2.2.5.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/keras_2.2.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.2.5.0.tar.gz
 Summary  : R Interface to 'Keras'
@@ -25,6 +25,7 @@ BuildRequires : R-tensorflow
 BuildRequires : R-tfruns
 BuildRequires : R-zeallot
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 networks 'API'. 'Keras' was developed with a focus on enabling fast experimentation,
@@ -39,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570641752
+export SOURCE_DATE_EPOCH=1571850426
 
 %install
-export SOURCE_DATE_EPOCH=1570641752
+export SOURCE_DATE_EPOCH=1571850426
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
