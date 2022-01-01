@@ -4,7 +4,7 @@
 #
 Name     : R-keras
 Version  : 2.7.0
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/keras_2.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.7.0.tar.gz
 Summary  : R Interface to 'Keras'
@@ -46,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637199700
+export SOURCE_DATE_EPOCH=1641041410
 
 %install
-export SOURCE_DATE_EPOCH=1637199700
+export SOURCE_DATE_EPOCH=1641041410
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
