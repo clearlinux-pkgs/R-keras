@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-keras
-Version  : 2.11.1
-Release  : 49
-URL      : https://cran.r-project.org/src/contrib/keras_2.11.1.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/keras_2.11.1.tar.gz
+Version  : 2.13.0
+Release  : 50
+URL      : https://cran.r-project.org/src/contrib/keras_2.13.0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/keras_2.13.0.tar.gz
 Summary  : R Interface to 'Keras'
 Group    : Development/Tools
 License  : MIT
@@ -41,17 +41,19 @@ networks 'API'. 'Keras' was developed with a focus on enabling fast experimentat
 
 %prep
 %setup -q -n keras
-cd %{_builddir}/keras
+pushd ..
+cp -a keras buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679414799
+export SOURCE_DATE_EPOCH=1692202152
 
 %install
-export SOURCE_DATE_EPOCH=1679414799
+export SOURCE_DATE_EPOCH=1692202152
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -89,6 +91,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -155,11 +158,13 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/keras/python/kerastools/layer.py
 /usr/lib64/R/library/keras/python/kerastools/model.py
 /usr/lib64/R/library/keras/python/kerastools/progbar.py
+/usr/lib64/R/library/keras/python/kerastools/utils.py
 /usr/lib64/R/library/keras/python/kerastools/wrapper.py
 /usr/lib64/R/library/keras/tests/testthat.R
 /usr/lib64/R/library/keras/tests/testthat/digit.jpeg
 /usr/lib64/R/library/keras/tests/testthat/helper-skips.R
 /usr/lib64/R/library/keras/tests/testthat/helper-utils.R
+/usr/lib64/R/library/keras/tests/testthat/setup.R
 /usr/lib64/R/library/keras/tests/testthat/test-Layer.R
 /usr/lib64/R/library/keras/tests/testthat/test-activations.R
 /usr/lib64/R/library/keras/tests/testthat/test-applications.R
