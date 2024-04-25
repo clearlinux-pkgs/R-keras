@@ -7,7 +7,7 @@
 #
 Name     : R-keras
 Version  : 2.15.0
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/keras_2.15.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/keras_2.15.0.tar.gz
 Summary  : R Interface to 'Keras'
